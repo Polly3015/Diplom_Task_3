@@ -5,14 +5,13 @@ import ru.stellarburgers.pageobjects.Constants;
 import ru.stellarburgers.pageobjects.LocatorsAuthorizationAndRegistration;
 import ru.stellarburgers.pageobjects.LocatorsMainPage;
 import ru.stellarburgers.pageobjects.User;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.openqa.selenium.WebDriver;
 
-public class LoginTest {
+public class LoginTest extends BaseURI {
     private WebDriver driver;
     private final DriverFactory driverFactory = new DriverFactory();
 
@@ -33,8 +32,6 @@ public class LoginTest {
         driver = driverFactory.getDriver();
 
         driver.get(Constants.BASE_URI);
-
-        RestAssured.baseURI = Constants.BASE_URI;
 
         userToken = user.successRegisterUser(user);
 

@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import org.openqa.selenium.WebDriver;
 
-public class TabsIngredientsTest {
+public class TabsIngredientsTest extends BaseURI {
     private WebDriver driver;
     private final DriverFactory driverFactory = new DriverFactory();
 

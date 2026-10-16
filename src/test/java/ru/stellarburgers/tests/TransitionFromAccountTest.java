@@ -2,14 +2,13 @@ package ru.stellarburgers.tests;
 
 import org.junit.jupiter.api.DisplayName;
 import ru.stellarburgers.pageobjects.*;
-import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import org.openqa.selenium.WebDriver;
 
-public class TransitionFromAccountTest {
+public class TransitionFromAccountTest extends BaseURI {
 
     private WebDriver driver;
     private final DriverFactory driverFactory = new DriverFactory();
@@ -30,8 +29,6 @@ public class TransitionFromAccountTest {
         driverFactory.initDriver();
         driver = driverFactory.getDriver();
         driver.get(Constants.BASE_URI);
-
-        RestAssured.baseURI = Constants.BASE_URI;
 
         userToken = user.successRegisterUser(user);
 
